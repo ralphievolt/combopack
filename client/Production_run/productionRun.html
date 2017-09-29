@@ -1,0 +1,37 @@
+<template name="productionRun">
+  <div class="panel panel-default pan-height">
+    <div class="panel-heading">
+      <h3 class="panel-title">Production Run Settings</h3>
+    </div>
+    <div class="panel-body">
+      <div class="form-group">
+        <label for="select" class="col-lg-2 control-label">Prod. Order</label>
+        <div class="col-lg-10">
+          <select class="form-control" id="selectProdOrder">
+            <option selected="selected" value=""></option>
+            {{#each prodorderList}}
+              <option>{{prodorder}}</option>
+            {{/each}}
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-lg-offset-2">
+					<p>&nbsp;</p>
+          <button class="btn btn-default btnCancelProd">Cancel Production</button>
+          <button type="submit" class="btn btn-primary btnRunProd">Run Production</button>
+        </div>
+      </div>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+
+      <center>
+        <label>Part Number</label><h2 class="pnName">{{ partnumText }}</h2>
+        <label>Order Quantity: </label><h3>{{ orderqtyText }}</h3>
+      </center>
+      <a href="#" class="btn btn-default btn-block" id="btnProdOrderClose">Confirm Production Order Closure</a>
+
+    </div>
+  </div>
+
+</template>

@@ -1,0 +1,67 @@
+<template name="scannersView">
+  {{#if productionrun}}
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingTwo">
+        <h4 class="panel-title">
+          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            <strong>Production Scanners</strong>
+          </a>
+        </h4>
+      </div>
+      <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+        <div class="panel-body">
+
+          <div class="col-lg-4">
+            <a href="#" class="btn btn-default btn-block" >Part Number: <strong>{{partNumberSelect}}</strong></a>
+            <a href="#" class="btn btn-info btn-block" id="btnBagIndi">Bag-to-Indibox</a>
+            <a href="#" class="btn btn-success btn-block" id="btnIndiShip">Indibox-to-Shipping</a>
+            <a href="#" class="btn btn-warning btn-block" id="btnShipBundle">Shipping-to-Bundlebox</a>
+            <a href="#" class="btn btn-danger btn-block" id="btnBundlePal">Bundlebox-to-Pallet</a>
+
+          </div>
+          <div class="col-lg-8">
+            {{#if isBagIndi}}
+              {{> scanner1}}
+            {{/if}}
+
+            {{#if isIndiShip}}
+              {{> scanner2}}
+            {{/if}}
+
+            {{#if isShipBundle}}
+              {{> scanner3}}
+            {{/if}}
+
+            {{#if isBundlePal}}
+              {{> scanner4}}
+            {{/if}}
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingFour">
+        <h4 class="panel-title">
+          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            <strong>Pallet Rework: Add & Remove Boxes</strong>
+          </a>
+        </h4>
+      </div>
+      <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+        <div class="panel-body">
+          <div class="col-lg-6 col-md-6">
+            {{> palletRemove}}
+          </div>
+          <div class="col-lg-6 col-md-6">
+            {{> palletAddition}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  {{/if}}
+</template>

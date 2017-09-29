@@ -1,0 +1,25 @@
+<template name="scanner1">
+  <div class="panel panel-info pan-height">
+    <div class="panel-heading">
+      <h3 class="panel-title"><strong>Indibox Aggregator</strong></h3>
+      <div><input type="checkbox" id="openScannerPort1" > <small>Port Open</small></div>
+    </div>
+    <div class="panel-body">
+      <div class="form-group">
+        <div class="col-lg-12 col-md-12">
+          <input type="text" class="form-control" id="inputBarcode" placeholder="Enter Barcode Here">
+        </div>
+      </div>
+    
+      <div class="panel-body" style="max-height: 230px;overflow-y: scroll;">
+        <ul>
+          {{#each indiboxList}}
+          <li><h6>{{foil}} <span class="glyphicon glyphicon-trash"></span></h6></li>
+          {{/each}}
+        </ul>
+      </div>
+      <div class="col-lg-2"><h3 class="scanner1Counter">{{indiboxListCount}}</h3></div>
+
+    </div>
+  </div>
+</template>

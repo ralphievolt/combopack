@@ -1,0 +1,25 @@
+<template name="scanner2">
+  <div class="panel panel-success pan-height">
+    <div class="panel-heading">
+      <h3 class="panel-title"><strong>Shippingbox Aggregator</strong></h3>
+      <div><input type="checkbox" id="openScannerPort2" > <small>Port Open</small></div>
+    </div>
+    <div class="panel-body">
+      <div class="form-group">
+        <div class="col-lg-12 col-md-12">
+          <input type="text" class="form-control" id="inputBarcode" placeholder="Enter Barcode Here">
+        </div>
+      </div>
+
+      <div class="panel-body" style="max-height: 230px;overflow-y: scroll;">
+        <ul>
+          {{#each shippingboxList}}
+          <li><h6>{{indibox}} <span class="glyphicon glyphicon-trash"></span></h6></li>
+          {{/each}}
+        </ul>
+      </div>
+      <div class="col-lg-2"><h3 class="scanner1Counter">{{shippingboxListCount}}</h3></div>
+      <button type="submit" class="btn btn-success btnAggregate2 pull-right">Aggregate Now</button>
+    </div>
+  </div>
+</template>

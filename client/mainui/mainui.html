@@ -1,0 +1,59 @@
+<head>
+	<title>FCI Serialization</title>
+
+</head>
+
+<body>
+
+	{{#if clientAllow}}
+
+	<div class="container">
+		{{> header}}
+
+		<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingOne">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+							<strong>Set Production Run</strong>
+						</a>
+					</h4>
+				</div>
+				<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+					<div class="panel-body">
+						<div class="col-lg-6 col-md-6">
+							{{> productionOrder}}
+						</div>
+						<div class="col-lg-6 col-md-6">
+							{{> productionRun}}
+						</div>
+					</div>
+				</div>
+			</div>
+
+			{{> scannersView}}
+
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingThree">
+					<h4 class="panel-title">
+						<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+							<strong>Aggregation Checker</strong>
+						</a>
+					</h4>
+				</div>
+				<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+					<div class="panel-body">
+						{{> aggregationReport}}
+					</div>
+				</div>
+			</div>
+		
+		</div>
+		<hr>
+	</div>
+
+	{{else}}
+	 <h1>Ooppss!! you are not allowed to access this site </h1>
+	{{/if}}
+
+</body>
